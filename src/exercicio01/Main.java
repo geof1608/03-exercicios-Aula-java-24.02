@@ -1,6 +1,7 @@
 package exercicio01;
 
 import java.sql.SQLOutput;
+import java.text.DecimalFormat;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -11,6 +12,7 @@ public class Main {
         Scanner entrada = new Scanner(System.in);
         Random rd = new Random();
         Conta conta = new Conta();
+        DecimalFormat df = new DecimalFormat("#,## 0.00");
         double valor;
 
         System.out.print("Nome do correntista --> ");
@@ -19,7 +21,7 @@ public class Main {
 
 
 
-        System.out.println("Seu saldo: R$ "+ conta.saldo);
+        System.out.println("Seu saldo: R$ "+ df.format( conta.saldo));
 
         System.out.println("Quanto deseja depositar? ");
         valor = entrada.nextDouble();
@@ -29,7 +31,7 @@ public class Main {
         valor = entrada.nextDouble();
         conta.sacar(valor);
 
-        System.out.println("Seu saldo: R$ "+ conta.saldo);
+        System.out.println("Seu saldo: R$ "+ df.format (conta.saldo));
 
 
     }
